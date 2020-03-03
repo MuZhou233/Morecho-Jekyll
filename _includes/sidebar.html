@@ -1,0 +1,65 @@
+<div class="card card-site-meta">
+    <div class="title">站点信息</div>
+    <div class="site-meta row text-center">
+        <div class="col-4">
+            <div>{{ site.posts | size }}</div>
+            <div>文章</div>
+        </div>
+        <div class="col-4">
+            <div>{{ site.tags | size }}</div>
+            <div>标签</div>
+        </div>
+        <div class="col-4">
+            <div>{{ site.posts.first.date | date: "%y/%m/%d" }}</div>
+            <div>更新</div>
+        </div>
+    </div>
+</div>
+
+{% if page.layout == 'post' %}
+<div class="card card-post-meta">
+    <div class="title">文章信息</div>
+    <div class="site-meta row text-center">
+        <div class="col-4">
+            <div>{% if page.author %}{{ page.author }}{% else %}{{
+                site.owner.name }}{% endif %}</div>
+            <div>作者</div>
+        </div>
+        <div class="col-4">
+            <div>{{ page.content | strip_html | strip_newlines | remove: " " | size }}</div>
+            <div>字数</div>
+        </div>
+        <div class="col-4">
+            {% if page.date %}
+            <div>{{ page.date | date: "%y/%m/%d" }}</div>
+            {% else %}
+            <div>从未</div>
+            {% endif %}
+            <div>修改</div>
+        </div>
+    </div>
+    {% if site.tags-preview and page.tags %}
+    <div class="tags">
+        {% for tag in page.tags %}
+        <a class="tag" href="{{ site.baseurl }}/archive/?tag={{ tag }}" title="{{ tag }}">{{ tag }}</a>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% endif %}
+
+<div class="card card-musicbox">
+    <audio id="player"><source src="{{ site.music.url }}" type="audio/mp3" /></audio>
+    <div class="title" style="padding-bottom: 1rem">{{ site.music.title }}</div>
+    <div class="music-controls paused">
+        <!--span class="backward"><i data-feather="chevrons-left"></i></span-->
+        <span class="pause"><i data-feather="pause"></i></span>
+        <span class="play"><i data-feather="play"></i></span>
+        <!--span class="forward"><i data-feather="chevrons-right"></i></span-->
+        <span class="loading" style="display:none"><i data-feather="loader"></i></span>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar"></div>
+            <div class="progress-bar" role="progressbar" style="background-color: rgba(0,123,255,0.2)"></div>
+        </div>
+    </div>
+</div>

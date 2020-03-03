@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<h1 class="title">{{ site.title }}</h1>
+
+{% for post in paginator.posts %}{% if post.hide %}{% else %}
+
+<div class="card card-post-list">
+    <a {% if post.exterUrl %} href="{{ post.exterUrl }}" target="_blank"{% else %} href="{{ post.url | prepend: site.baseurl }}{% endif %}">
+        <div class="post-title">
+            {% if post.copyright %}「转载」{% endif %}
+            {% if post.exterUrl %}「外链」{% endif %}
+            {{ post.title }}
+        </div>
+        {% if post.subtitle %}
+        <div class="post-subtitle">
+            {{ post.subtitle }}
+        </div>
+        {% endif %}
+        <div class="post-content-preview">
+            {{ post.content | strip_html | truncate:50 }}
+        </div>
+    </a>
+    <div class="post-meta">
+        <i data-feather="edit-3"></i> {% if post.author %}{{ post.author }}{% else %}{{
+            site.owner.name }}{% endif %} <i data-feather="calendar"></i> {{ post.date | date: "%Y年%m月%d日" }}
+            <i data-feather="clock"></i>{{ post.content | strip_html | strip_newlines | remove: " " | size }} 字
+    </div>
+</div>
+{% endif %}{% endfor %}
+
+<!-- Pager -->
+<nav class="Page-navigation">
+    <ul class="pagination justify-content-center">
+        {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+        <li class="page-item"><a class="page-link" href="{{ site.url }}/"><span class="backward"><i data-feather="chevrons-left"></i></span></a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link" href="{{ site.url }}/page{{paginator.previous_page}}"><span class="backward"><i data-feather="chevrons-left"></i></span></a></li>
+        {% endif %}
+        {% else %}
+        <li class="page-item"><a class="page-link" href="javascript:;" aria-disabled="true"><span class="backward"><i data-feather="chevrons-left"></i></span></a></li>
+        {% endif %}
+        {% if paginator.page == 1 %}
+        <li class="page-item active"><a class="page-link" href="javascript:;">1</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link" href="{{ site.url }}/">1</a></li>
+        {% endif %}
+        {% for count in (2..paginator.total_pages) %}
+        {% if count == paginator.page %}
+        <li class="page-item active"><a class="page-link" href="javascript:;">{{count}}</a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link" href="{{ site.url }}/page{{count}}">{{count}}</a></li>
+        {% endif %}
+        {% endfor %}
+        {% if paginator.next_page %}
+        <li class="page-item"><a class="page-link" href="{{ site.url }}/page{{paginator.next_page}}"><span class="forward"><i data-feather="chevrons-right"></i></span></a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link" href="javascript:;" aria-disabled="true"><span class="forward"><i data-feather="chevrons-right"></i></span></a></li>
+        {% endif %}
+    </ul>
+</nav>
