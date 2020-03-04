@@ -17,14 +17,14 @@ date: 2020-02-27
 
 > 引用  
 > 段落`[隐藏]`*斜体***加粗**`行内代码`[超链接](./) [未加密的HTTP链接显示警告](http://example.com)  
-> https://auto.link https://auto.link.不支持中文域名  
+> auto.link  
 
 ```markdown
 代码块
 
 > 上面的引用  
-> 段落`[隐藏]`*斜体***加粗**`行内代码`[超链接](./) [未加密的HTTP链接显示警告](http://example.com)  
-> https://auto.link https://auto.link.不支持中文域名  
+> 段落`[隐藏]`*斜体***加粗**`行内代码`[超链接](https://example.com) [未加密的HTTP链接显示警告](http://example.com)  
+> auto.link  
 ```
 ```bash
 #!/bin/sh

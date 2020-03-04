@@ -14,7 +14,7 @@ body.theme-front-orange .custom-checkbox .custom-control-input:disabled:checked:
 body.theme-front-orange .custom-checkbox .custom-control-input:disabled:indeterminate ~ .custom-control-label::before{
     background-color: #fb6340;
 }
-body.theme-front-orange article h2:before {
+body.theme-front-orange article h1:before {
   background-color: rgba(251, 99, 64);
 }
 body.theme-front-orange article h2:before {
@@ -28,4 +28,7 @@ body.theme-front-orange article h4:before {
 }
 body.theme-front-orange article h5:before {
   background-color: rgba(251, 99, 64, 0.2);
+}
+body.theme-front-orange .nav-pills:hover .nav-link.active:hover{
+  color: #fff;
 }

@@ -38,7 +38,7 @@
             <div>修改</div>
         </div>
     </div>
-    {% if site.tags-preview and page.tags %}
+    {% if page.tags %}
     <div class="tags">
         {% for tag in page.tags %}
         <a class="tag" href="{{ site.baseurl }}/archive/?tag={{ tag }}" title="{{ tag }}">{{ tag }}</a>

@@ -1,20 +1,13 @@
 @import "asserts/css/morecho.css";
 @import "asserts/css/theme-green.css";
 @import "asserts/css/theme-orange.css";
+@import "asserts/css/theme-none.css";
 
 *{
   scroll-behavior:smooth;
 }
 body {
   background-color: #eee;
-}
-.background {
-  display: none;
-  background: no-repeat center top;
-  background-size: cover;
-  position: fixed;
-  width: 100%;
-  height: 100%;
 }
 .feather {
   width: 1rem;

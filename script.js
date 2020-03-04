@@ -7,9 +7,8 @@ $(function(){
         }
     })
     $('article p').each(function(){
-        var reg = /([ \n]{1})(http|https)(:\/\/[\w\-_]+)(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])([ \n]{1})/g;
         content = $(this).html();
-        $(this).html(content.replace(reg, '$1<a href="$2$3$4$5">$1$2$3$4$5</a>$6'));
+        $(this).html(Autolinker.link(content));
     })
     $('article a').each(function(){
         var href = $(this).attr('href').trim();
@@ -84,7 +83,9 @@ $(function(){
         $('.site-control div[data-tab='+$(this).attr('data-tab')+']').addClass('active')
     })
 
+    $('body').attr('class', localStorage.getItem('theme'))
     $('.theme-control .col div').click(function(){
         $('body').attr('class',$(this).attr('class'))
+        localStorage.setItem('theme', $(this).attr('class'))
     })
 })
