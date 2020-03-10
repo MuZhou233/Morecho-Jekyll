@@ -46,5 +46,9 @@ exit 0;
 一 | 行
 又一 | 行
 
+> METACARD
+> ### 信息卡片
+> **依然***支持*`各种``[行内]`样式
+> ![图片描述不会显示](/asserts/img/avatar.jpg)
 
 ![图片描述](/asserts/img/avatar.jpg)

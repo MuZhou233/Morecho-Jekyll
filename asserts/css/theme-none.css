@@ -4,6 +4,7 @@ body.theme-front-none a{
 }
 .theme-control div.theme-front-none:before,
 .theme-control div.theme-front-none:after,
+body.theme-front-none .js-toc-move:before,
 body.theme-front-none .page-item.active .page-link,
 body.theme-front-none .nav-pills .nav-link.active,
 body.theme-front-none .nav-pills:hover .nav-link:hover,

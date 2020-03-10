@@ -22,6 +22,24 @@
     <script src="{{ '/asserts/js/SmoothScroll.min.js' | prepend: site.baseurl }}"></script>
     <script src="{{ '/asserts/js/Autolinker.min.js' | prepend: site.baseurl }}"></script>
 
+    {% if page.layout == 'post' %}
+    <script src="{{ '/asserts/js/clipboard.min.js' | prepend: site.baseurl }}"></script>
+    <script src="{{ '/asserts/js/tocbot.min.js' | prepend: site.baseurl }}"></script>
+    <script>
+        tocbot.init({
+            tocSelector: '.js-toc',
+            contentSelector: '.js-toc-content',
+            headingSelector: 'h1, h2, h3, h4',
+            hasInnerContainers: true,
+            scrollEndCallback: function(){
+                var padding = 5;
+                $('.js-toc-move').css('top', $('.is-active-li a').offset().top - $('.js-toc').offset().top - padding)
+                $('.js-toc-move').css('height', $('.is-active-li a').height() + padding*2)
+            }
+        });
+    </script>
+    {% endif %}
+
     {% if page.url == '/archive/' %}
     <script src="{{ '/asserts/js/archive.js' | prepend: site.baseurl }}"></script>
     <script>

@@ -59,6 +59,7 @@ body {
   fill: none;
 }
 .card {
+  display: block;
   background-color: #fff;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
@@ -69,10 +70,10 @@ p {
 }
 code {
   color: #555;
-  margin: 0.1rem 0.2rem;
-  padding: 0.1rem 0.2rem;
+  margin: 0 0.2em;
+  padding: 0.1em 0.2em;
   font-weight: bold;
-  border-radius: 0.2rem;
+  border-radius: 0.2em;
   background-color: rgba(0, 0, 0, 0.05);
 }
 blockquote {
@@ -80,17 +81,16 @@ blockquote {
   background-color: rgba(0, 0, 0, 0.05);
   padding: 0.25rem 1rem;
   border-radius: .5rem;
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+  overflow: hidden;
 }
 blockquote:before {
   content: "";
   position: absolute;
-  height: calc(100% - 1rem);
-  width: 2px;
+  height: 100%;
+  width: .25rem;
   background-color: rgba(0, 0, 0, 0.1);
   left: 0;
-  top: .5rem;
+  top: 0;
 }
 blockquote p {
   margin-bottom: 0;

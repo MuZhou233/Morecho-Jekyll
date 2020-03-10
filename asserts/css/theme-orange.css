@@ -4,6 +4,7 @@ body.theme-front-orange a{
 }
 .theme-control div.theme-front-orange:before,
 .theme-control div.theme-front-orange:after,
+body.theme-front-orange .js-toc-move:before,
 body.theme-front-orange .page-item.active .page-link,
 body.theme-front-orange .nav-pills .nav-link.active,
 body.theme-front-orange .nav-pills:hover .nav-link:hover,

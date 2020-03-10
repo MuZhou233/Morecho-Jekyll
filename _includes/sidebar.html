@@ -1,3 +1,4 @@
+<div class="dynamic-hide">
 <div class="card card-site-meta">
     <div class="title">站点信息</div>
     <div class="site-meta row text-center">
@@ -47,6 +48,7 @@
     {% endif %}
 </div>
 {% endif %}
+</div>
 
 <div class="card card-musicbox">
     <audio id="player"><source src="{{ site.music.url }}" type="audio/mp3" /></audio>
@@ -63,3 +65,10 @@
         </div>
     </div>
 </div>
+
+{% if page.layout == 'post' %}
+<div class="card card-toc">
+    <div class="js-toc-move"></div>
+    <div class="js-toc toc"></div>
+</div>
+{% endif %}

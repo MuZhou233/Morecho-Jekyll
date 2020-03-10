@@ -16,9 +16,10 @@ Feature Plan
 
 - [ ] Site Control
 - [x] Fullscreen
-- [ ] Article Navigation
+- [x] Article Navigation
 - [x] Site Metadata
 - [ ] Custom Theme
+    - [x] Custom Color
 - [x] Music Player
     - [ ] Play List
 - [x] Smooth Scroll
@@ -32,9 +33,11 @@ MarkDown Adaptation Plan
 - [x] Automatic Link
 - [x] Syntax Hightlighting
 - [x] Inline Code
+    - [ ] One Click Copy
 - [x] Task Lists
 - [x] Hide Text
 - [ ] Picture Viewer
+- [x] Meta Card
 
 Device Adaptation Plan  
 
